@@ -136,7 +136,7 @@
             init: function () {
                 S.Drawing.init('.canvas');
                 document.body.classList.add('body--ready');
-                S.UI.simulate("Hello|Cậu|biết|Gì chưa|#countdown 3|Nay là ngày| 20-10 | Daika có |Bất ngờ|#time|❤️");
+                S.UI.simulate("Hello|Cậu|biết|Gì|chưa|#countdown 3|Nay|là|ngày| 20-10 |Daika|có|Bất|ngờ|#time|❤️");
                 S.Drawing.loop(function () {
                     S.Shape.render();
                 });
@@ -170,8 +170,8 @@
                     requestFrame.call(window, this.loop.bind(this));
                 },
                 adjustCanvas: function () {
-                    canvas.width = window.innerWidth - 100;
-                    canvas.height = window.innerHeight - 30;
+                    canvas.width = window.innerWidth - 50;
+                    canvas.height = window.innerHeight - 10;
                 },
                 clearFrame: function () {
                     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -310,11 +310,11 @@
             this.p = new S.Point({
                 x: x,
                 y: y,
-                z: 5,
+                z: 10,
                 a: 1,
                 h: 0
             });
-            this.e = 0.07;
+            this.e = 0.007;
             this.s = true;
             this.c = new S.Color(255, 255, 255, this.p.a);
             this.t = this.clone();
@@ -543,7 +543,7 @@
                         i = 0;
                     while (n.dots.length > 0) {
                         i = Math.floor(Math.random() * n.dots.length);
-                        dots[d].e = fast ? 0.25 : (dots[d].s ? 0.14 : 0.11);
+                        dots[d].e = fast ? 0.1 : (dots[d].s ? 0.07 : 0.08);
                         if (dots[d].s) {
                             dots[d].move(new S.Point({
                                 z: Math.random() * 20 + 10,
