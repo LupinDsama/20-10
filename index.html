@@ -280,7 +280,7 @@
                         default:
                             S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? 'HacPai' : current));
                     }
-                }, 2000, sequence.length);
+                }, 1500, sequence.length);
             }
             return {
                 simulate: function (action) {
@@ -543,7 +543,7 @@
                         i = 0;
                     while (n.dots.length > 0) {
                         i = Math.floor(Math.random() * n.dots.length);
-                        dots[d].e = fast ? 0.1 : (dots[d].s ? 0.07 : 0.08);
+                        dots[d].e = fast ? 0.6 : (dots[d].s ? 0.5 : 0.5);
                         if (dots[d].s) {
                             dots[d].move(new S.Point({
                                 z: Math.random() * 20 + 10,
